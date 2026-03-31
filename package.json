@@ -1,0 +1,30 @@
+{
+  "name": "Orianwave-v2.0",
+  "private": true,
+  "version": "2.2.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build && node post-build.js",
+    "build:clean": "vite build && node post-build.js",
+    "preview": "vite preview --host 0.0.0.0",
+    "format": "prettier --write .",
+    "sitemap": "node scripts/generate-sitemap.js",
+    "sitemap:prod": "node scripts/generate-sitemap.js --dist",
+    "sitemap:both": "node scripts/generate-sitemap.js --both"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "terser": "^5.43.1",
+    "vite": "^6.3.1"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.4",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "nodemailer": "^8.0.3",
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "tailwindcss": "^4.1.4",
+    "vite-plugin-html-inject": "^1.1.2"
+  }
+}

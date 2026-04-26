@@ -52,7 +52,7 @@ export const URL_MAP = {
 
   // ── Trust & Social Proof ─────────────────────────────────
 
-  'digital-marketing-support': '/support',
+  
   'digital-marketing-faq': '/faq',
   'digital-marketing-security': '/security',
 

@@ -1,5 +1,5 @@
 /* =========================
-Algolabs Buttons Styles
+OrianWave Buttons Styles
 =========================== */
 @utility btn {
   @apply relative inline-block cursor-pointer overflow-hidden rounded-full border text-center font-normal text-nowrap lowercase transition-all duration-500 ease-in-out hover:scale-102;

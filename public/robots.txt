@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.algolabs.one/sitemap.xml
+Sitemap: https://www.OrianWave.one/sitemap.xml

@@ -210,7 +210,7 @@ The project uses a component-based architecture with the `<Component>` tag for i
   <head>
     <Component src="src/components/shared/head-links.htm" />
 
-    <title>Your Page Title || Algolabs</title>
+    <title>Your Page Title || OrianWave</title>
   </head>
   <body>
     <Component src="src/components/pages/[theme-name]/header.htm" />
@@ -219,7 +219,7 @@ The project uses a component-based architecture with the `<Component>` tag for i
       <!-- More components -->
     </main>
     <Component src="src/components/pages/[theme-name]/footer.htm" />
-       <Component src="src/components/shared/gtm-noscript.htm" />
+    <Component src="src/components/shared/gtm-noscript.htm" />
   </body>
 </html>
 ```

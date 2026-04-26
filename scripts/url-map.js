@@ -1,5 +1,5 @@
 /**
- * AlgoLabs URL Map
+ * OrianWave URL Map
  * ================
  * Maps every "digital-marketing-*" page slug to its clean, SEO-friendly URL.
  * Used by:

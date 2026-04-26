@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * AlgoLabs Sitemap Generator
+ * OrianWave Sitemap Generator
  * ==========================
  * Generates public/sitemap.xml (for dev) and optionally dist/sitemap.xml (for prod).
  *
@@ -9,7 +9,7 @@
  *   node scripts/generate-sitemap.js --dist           → writes to dist/sitemap.xml
  *   node scripts/generate-sitemap.js --both           → writes to both
  *
- * The base URL is read from the SITE_URL env var, or defaults to https://algolabs.one
+ * The base URL is read from the SITE_URL env var, or defaults to https://OrianWave.one
  */
 
 import fs from 'fs';
@@ -20,7 +20,7 @@ import { URL_MAP, SITEMAP_INCLUDE, getSitemapMeta, toCleanUrl } from './url-map.
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 
-const BASE_URL = process.env.SITE_URL || 'https://algolabs.one';
+const BASE_URL = process.env.SITE_URL || 'https://OrianWave.one';
 const args = process.argv.slice(2);
 const writeDist = args.includes('--dist') || args.includes('--both');
 const writePub = !args.includes('--dist') || args.includes('--both');

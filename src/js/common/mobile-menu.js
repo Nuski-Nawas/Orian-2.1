@@ -1,6 +1,5 @@
 class MobileMenuAccordion {
-  constructor(options = {}) {
-    this.defaultOpenMenu = options.defaultOpenMenu || 'company';
+  constructor() {
     this.toggleButtons = null;
     this.submenus = null;
     this.arrows = null;
@@ -18,13 +17,12 @@ class MobileMenuAccordion {
   bindEvents() {
     this.toggleButtons = document.querySelectorAll('.mobile-menu-toggle[data-menu]');
 
-    if (this.toggleButtons.length === 0) {
-      return;
-    }
+    if (this.toggleButtons.length === 0) return;
 
     this.submenus = document.querySelectorAll('.mobile-submenu[data-submenu]');
     this.arrows = document.querySelectorAll('.mobile-menu-toggle .menu-arrow');
 
+    // ✅ Make ALL menus open by default
     this.setDefaultState();
 
     this.toggleButtons.forEach((button) => {
@@ -38,122 +36,45 @@ class MobileMenuAccordion {
     });
   }
 
+  // ✅ Open ALL menus by default
   setDefaultState() {
     this.submenus.forEach((submenu) => {
-      submenu.classList.add('hidden');
-      submenu.classList.remove('block');
+      submenu.classList.remove('hidden');
+      submenu.classList.add('block');
     });
 
     this.arrows.forEach((arrow) => {
-      arrow.classList.remove('rotate-90');
+      arrow.classList.add('rotate-90');
     });
-
-    if (this.defaultOpenMenu) {
-      const defaultSubmenu = document.querySelector(
-        `.mobile-submenu[data-submenu="${this.defaultOpenMenu}"]`
-      );
-      const defaultButton = document.querySelector(
-        `.mobile-menu-toggle[data-menu="${this.defaultOpenMenu}"]`
-      );
-      const defaultArrow = defaultButton?.querySelector('.menu-arrow');
-
-      if (defaultSubmenu) {
-        defaultSubmenu.classList.remove('hidden');
-        defaultSubmenu.classList.add('block');
-      }
-
-      if (defaultArrow) {
-        defaultArrow.classList.add('rotate-90');
-      }
-    }
   }
 
+  // ✅ Toggle independently (NO accordion behavior)
   toggleMenu(menuId) {
     const submenu = document.querySelector(`.mobile-submenu[data-submenu="${menuId}"]`);
     const button = document.querySelector(`.mobile-menu-toggle[data-menu="${menuId}"]`);
     const arrow = button?.querySelector('.menu-arrow');
 
-    if (!submenu || !button) {
-      return;
-    }
+    if (!submenu || !button) return;
 
-    const isCurrentlyOpen =
-      submenu.classList.contains('block') && !submenu.classList.contains('hidden');
+    const isOpen = submenu.classList.contains('block');
 
-    this.closeAllMenus();
-
-    if (isCurrentlyOpen) {
+    if (isOpen) {
       submenu.classList.add('hidden');
       submenu.classList.remove('block');
-      if (arrow) {
-        arrow.classList.remove('rotate-90');
-      }
+      if (arrow) arrow.classList.remove('rotate-90');
     } else {
       submenu.classList.remove('hidden');
       submenu.classList.add('block');
-      if (arrow) {
-        arrow.classList.add('rotate-90');
-      }
+      if (arrow) arrow.classList.add('rotate-90');
     }
-  }
-
-  closeAllMenus() {
-    this.submenus.forEach((submenu) => {
-      submenu.classList.add('hidden');
-      submenu.classList.remove('block');
-    });
-
-    this.arrows.forEach((arrow) => {
-      arrow.classList.remove('rotate-90');
-    });
-  }
-
-  openMenu(menuId) {
-    const submenu = document.querySelector(`.mobile-submenu[data-submenu="${menuId}"]`);
-    const button = document.querySelector(`.mobile-menu-toggle[data-menu="${menuId}"]`);
-    const arrow = button?.querySelector('.menu-arrow');
-
-    if (submenu && button) {
-      this.closeAllMenus();
-
-      submenu.classList.remove('hidden');
-      submenu.classList.add('block');
-      if (arrow) {
-        arrow.classList.add('rotate-90');
-      }
-    }
-  }
-
-  closeMenu(menuId) {
-    const submenu = document.querySelector(`.mobile-submenu[data-submenu="${menuId}"]`);
-    const button = document.querySelector(`.mobile-menu-toggle[data-menu="${menuId}"]`);
-    const arrow = button?.querySelector('.menu-arrow');
-
-    if (submenu && button) {
-      submenu.classList.add('hidden');
-      submenu.classList.remove('block');
-      if (arrow) {
-        arrow.classList.remove('rotate-90');
-      }
-    }
-  }
-
-  reinit() {
-    this.bindEvents();
-  }
-
-  setDefaultOpenMenu(menuId) {
-    this.defaultOpenMenu = menuId;
-    this.setDefaultState();
   }
 }
 
+// ✅ Initialize
 document.addEventListener('DOMContentLoaded', () => {
   const mobileMenuExists = document.querySelector('.mobile-menu-toggle[data-menu]');
 
   if (mobileMenuExists) {
-    window.mobileMenuAccordion = new MobileMenuAccordion({
-      defaultOpenMenu: 'company',
-    });
+    window.mobileMenuAccordion = new MobileMenuAccordion();
   }
 });

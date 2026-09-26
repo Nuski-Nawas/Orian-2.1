@@ -3,7 +3,7 @@ Header
 ===========================-->
 <header>
   <div
-    class="header-one lp:!max-w-[1290px] border-stroke-6 dark:bg-background-9 fixed top-5 left-1/2 z-50 mx-auto flex w-full max-w-[350px] -translate-x-1/2 items-center justify-between rounded-full bg-white px-2.5 py-2.5 opacity-0 min-[425px]:max-w-[375px] min-[500px]:max-w-[450px] sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] xl:py-0 dark:border"
+    class="header-one lp:!max-w-[1290px] border-stroke-6 dark:bg-background-9 fixed top-5 left-1/2 z-50 mx-auto flex w-full max-w-[350px] -translate-x-1/2 items-center justify-between rounded-full bg-white px-2.5 py-2.5 min-[425px]:max-w-[375px] min-[500px]:max-w-[450px] sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] xl:py-0 dark:border"
     data-ns-animate
     data-direction="up"
     data-offset="100"
@@ -11,29 +11,56 @@ Header
     <div>
       <a href="./digital-marketing.html">
         <span class="sr-only">Home</span>
-        <figure class="hidden lg:block lg:max-w-[198px]">
-          <img src="./images/shared/main-logo.svg" class="dark:hidden" alt="OrianWave" />
-          <img src="./images/shared/dark-logo.svg" class="hidden dark:block" alt="OrianWave" />
-        </figure>
-        <figure class="block max-w-[44px] lg:hidden">
-          <img src="./images/shared/logo.svg" alt="OrianWave" class="block w-full dark:hidden" />
+
+        <!-- DESKTOP LOGO -->
+        <figure class="hidden lg:block max-w-[198px]">
           <img
-            src="./images/shared/logo-dark.svg"
+            src="./images/shared/Orian-main-black-black-logo.svg"
+            class="block w-full dark:hidden"
+            alt="OrianWave"
+          />
+
+          <img
+            src="./images/shared/Orian-main-white-white-logo.svg"
+            class="hidden w-full dark:block"
+            alt="OrianWave"
+          />
+        </figure>
+
+        <!-- MOBILE LOGO -->
+        <figure class="block max-w-[44px] lg:hidden">
+          <img
+            src="./images/shared/Orian-logo.svg"
+            alt="OrianWave"
+            class="block w-full dark:hidden"
+          />
+
+          <img
+            src="./images/shared/Orian-logo-dark.svg"
             alt="OrianWave"
             class="hidden w-full dark:block"
           />
         </figure>
       </a>
     </div>
+
     <nav class="hidden items-center xl:flex">
       <ul class="flex items-center">
-        <li class="nav-item relative cursor-pointer py-2.5" data-menu="company-mega-menu">
+
+        <!-- SERVICES -->
+        <li
+          class="nav-item relative cursor-pointer py-2.5"
+          data-menu="company-mega-menu"
+        >
           <a
             href="#"
             class="hover:border-stroke-2 dark:hover:border-stroke-7 text-tagline-1 text-secondary/60 hover:text-secondary dark:text-accent/60 dark:hover:text-accent {=$nav-item-class} flex items-center gap-1 rounded-full border border-transparent px-4 py-2 font-normal transition-all duration-200"
           >
             <span>Services</span>
-            <span class="nav-arrow block origin-center translate-y-px transition-all duration-300">
+
+            <span
+              class="nav-arrow block origin-center translate-y-px transition-all duration-300"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -50,18 +77,24 @@ Header
               </svg>
             </span>
           </a>
+
           <Component src="src/components/pages/digital-marketing/company-menu.htm" />
         </li>
 
-        
-
-        <li class="nav-item relative cursor-pointer py-2.5" data-menu="people-dropdown-menu">
+        <!-- COMPANY -->
+        <li
+          class="nav-item relative cursor-pointer py-2.5"
+          data-menu="people-dropdown-menu"
+        >
           <a
             href="#"
             class="hover:border-stroke-2 dark:hover:border-stroke-7 text-tagline-1 text-secondary/60 hover:text-secondary dark:text-accent/60 dark:hover:text-accent {=$nav-item-class} flex items-center gap-1 rounded-full border border-transparent px-4 py-2 font-normal transition-all duration-200"
           >
             <span>Company</span>
-            <span class="nav-arrow block origin-center translate-y-px transition-all duration-300">
+
+            <span
+              class="nav-arrow block origin-center translate-y-px transition-all duration-300"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -78,16 +111,24 @@ Header
               </svg>
             </span>
           </a>
+
           <Component src="src/components/pages/digital-marketing/people-and-culture-menu.htm" />
         </li>
 
-<li class="nav-item relative cursor-pointer py-2.5" data-menu="resources-mega-menu">
+        <!-- LEGAL & RESOURCES -->
+        <li
+          class="nav-item relative cursor-pointer py-2.5"
+          data-menu="resources-mega-menu"
+        >
           <a
             href="#"
             class="hover:border-stroke-2 dark:hover:border-stroke-7 text-tagline-1 text-secondary/60 hover:text-secondary dark:text-accent/60 dark:hover:text-accent {=$nav-item-class} flex items-center gap-1 rounded-full border border-transparent px-4 py-2 font-normal transition-all duration-200"
           >
             <span>Legal & Resources</span>
-            <span class="nav-arrow block origin-center translate-y-px transition-all duration-300">
+
+            <span
+              class="nav-arrow block origin-center translate-y-px transition-all duration-300"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -104,11 +145,14 @@ Header
               </svg>
             </span>
           </a>
+
           <Component src="src/components/pages/digital-marketing/resources-menu.htm" />
         </li>
+
       </ul>
     </nav>
 
+    <!-- CONTACT BUTTON -->
     <div class="hidden items-center justify-center xl:flex">
       <a
         href="./digital-marketing-contact.html"
@@ -117,16 +161,29 @@ Header
         <span>Contact Us</span>
       </a>
     </div>
+
+    <!-- MOBILE HAMBURGER -->
     <div class="block xl:hidden">
       <button
         class="nav-hamburger bg-background-4 dark:bg-background-6 flex size-12 cursor-pointer flex-col items-center justify-center gap-[5px] rounded-full"
       >
         <span class="sr-only">Menu</span>
-        <span class="bg-stroke-9 dark:bg-stroke-1 block h-0.5 w-6"></span>
-        <span class="bg-stroke-9 dark:bg-stroke-1 block h-0.5 w-6"></span>
-        <span class="bg-stroke-9 dark:bg-stroke-1 block h-0.5 w-6"></span>
+
+        <span
+          class="bg-stroke-9 dark:bg-stroke-1 block h-0.5 w-6"
+        ></span>
+
+        <span
+          class="bg-stroke-9 dark:bg-stroke-1 block h-0.5 w-6"
+        ></span>
+
+        <span
+          class="bg-stroke-9 dark:bg-stroke-1 block h-0.5 w-6"
+        ></span>
       </button>
     </div>
   </div>
+
+  <!-- MOBILE MENU -->
   <Component src="src/components/pages/digital-marketing/mobile-menu.htm" />
 </header>
